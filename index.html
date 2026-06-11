@@ -255,6 +255,27 @@ footer .mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;line-
 .qrbtns .qbtn{margin-top:0}
 .qbtn.ghost{background:transparent;color:var(--ink2);border:1px solid var(--ink2)}
 @media (max-width:680px){.glossary{grid-template-columns:1fr;gap:3px 0}.glossary dt{margin-top:13px}}
+/* ---- contact link + vanishing names (added) ---- */
+.reclink{display:inline-block;margin-top:24px;font-family:var(--mono);font-size:13px;letter-spacing:.06em;
+  color:var(--avon-d);background:var(--paper);padding:13px 22px;border-radius:3px;text-decoration:none}
+.reclink:hover{background:#fff}
+.threads{margin-top:50px;border-top:1px solid rgba(228,227,219,.25);padding-top:34px}
+.threads h3{font-family:var(--disp);font-size:clamp(26px,4.4vw,36px);color:var(--paper);margin:0 0 10px}
+.tlede{max-width:62ch;color:#d7d4c7;margin:0}
+.tlede em{color:#d9b65a;font-style:italic}
+.tflow{margin-top:28px;position:relative;padding-left:28px}
+.tflow::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:2px;
+  background:linear-gradient(var(--avon),rgba(228,227,219,.18))}
+.tstation{position:relative;margin:0}
+.tstation::before{content:"";position:absolute;left:-28px;top:7px;width:14px;height:14px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--avon)}
+.tstation .ty{font-family:var(--disp);font-size:30px;color:var(--paper);margin-right:8px}
+.tstation .tc{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#aba692}
+.tgap{position:relative;margin:8px 0 16px;display:flex;align-items:baseline;gap:10px 14px;flex-wrap:wrap}
+.tgap .tn{font-family:var(--disp);font-size:42px;line-height:.8;color:#d9b65a}
+.tgap .tl{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#aba692}
+.tgap .tnames{font-family:var(--body);font-size:16px;color:var(--paper);flex-basis:100%;margin-top:1px}
+.tnote{margin-top:22px;font-size:14px;color:#aba692;font-style:italic}
 </style>
 </head>
 <body>
@@ -313,6 +334,20 @@ footer .mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;line-
   <div class="count" id="count"></div>
   <div class="results" id="results"></div>
   <p class="srcline">Names transcribed from the original surveys. See the full scanned tables for exact acreages and rents: <a href="#" data-src="1597">1597 holdings</a> &middot; <a href="#" data-src="1649">1649 holdings</a>.</p>
+  <div class="threads">
+    <h3>The vanishing names</h3>
+    <p class="tlede">The surveys expose Ashow&rsquo;s real character: its families rarely lasted. From each roster of households, only a handful carried over to the next count &mdash; and <em>no surname appears in more than two of the four surveys</em>.</p>
+    <div class="tflow">
+      <div class="tstation"><span class="ty">1597</span> <span class="tc">24 households in Ashow Towne</span></div>
+      <div class="tgap"><span class="tn">4</span><span class="tl">surnames survive to 1649</span><span class="tnames">Dadley &middot; Clarke &middot; Hollicke &middot; De&nbsp;Lene</span></div>
+      <div class="tstation"><span class="ty">1649</span> <span class="tc">an almost wholly new set of tenants after enclosure</span></div>
+      <div class="tgap"><span class="tn">1</span><span class="tl">surname survives to 1776</span><span class="tnames">Tym / Tims</span></div>
+      <div class="tstation"><span class="ty">1776</span> <span class="tc">15 principal tenants</span></div>
+      <div class="tgap"><span class="tn">6</span><span class="tl">surnames survive to 1884</span><span class="tnames">Billington &middot; Dormer &middot; Freeman &middot; Lee &middot; Lynes &middot; Russell</span></div>
+      <div class="tstation"><span class="ty">1884</span> <span class="tc">41 households</span></div>
+    </div>
+    <p class="tnote">Survivors after David Clark&rsquo;s comparison of the 1597, 1649, 1776 and 1884 lists. Search any of these names above to trace them through the parish.</p>
+  </div>
 </div></section>
 
 <section id="maps"><div class="wrap">
@@ -372,7 +407,7 @@ footer .mono{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;line-
   <div class="eyebrow" style="justify-content:center;color:var(--paper)"><span class="num" style="border-color:rgba(228,227,219,.5);color:var(--paper)">7</span> Add to the record</div>
   <h2 style="margin-top:12px">Do you know this place?</h2>
   <p>If you live in one of these houses, recognise a family name, or have an old photograph of the village, the parish would love to add it to this record.</p>
-  <p class="editnote">[ Replace this with your contact &mdash; e.g. an email address or the LLTSC / parish council link &mdash; before you share. ]</p>
+  <p style="max-width:44ch;margin:14px auto 0;color:#cfe0df">Spotted an ancestor, recognise a house, or have an old photograph or memory to add? Get in touch &mdash; every scrap helps the record grow.</p><a class="reclink" href="mailto:nicksibly@hotmail.com?subject=Ashow%20village%20history%20-%20a%20contribution">nicksibly@hotmail.com</a>
 </div></section>
 
 <footer><div class="wrap">
