@@ -554,7 +554,7 @@ document.body.addEventListener('click',e=>{
     const cap=(MAPS.find(x=>x[0]===k)||[]).slice(1).join(' &middot; ')||'Ashow';openLb(k,cap);}
   const s=e.target.closest('[data-src]');if(s){e.preventDefault();const k=SRC[s.dataset.src];if(k)openLb(k,s.dataset.src+' holdings &middot; original survey');}
 });
-lb.addEventListener('wheel',e=>{e.preventDefault();const f=e.deltaY<0?1.15:0.87;scale=Math.min(8,Math.max(1,scale*f));if(scale===1){tx=0;ty=0;}lbApply();},{passive:false});
+lb.addEventListener('wheel',e=>{e.preventDefault();const f=e.deltaY<0?1.15:0.87;const ns=Math.min(8,Math.max(1,scale*f));const cx=lb.clientWidth/2,cy=lb.clientHeight/2,dx=e.clientX-cx,dy=e.clientY-cy;tx=dx-(dx-tx)*ns/scale;ty=dy-(dy-ty)*ns/scale;scale=ns;if(scale===1){tx=0;ty=0;}lbApply();},{passive:false});
 lbimg.addEventListener('dblclick',()=>{scale=scale>1?1:2.4;if(scale===1){tx=0;ty=0;}lbApply();});
 /* unified pointer pan + pinch (mouse + touch) */
 let pts=new Map(),pd=0,pmid=null;
@@ -572,7 +572,7 @@ lb.addEventListener('pointermove',e=>{
   if(p.length>=2){
     const d=Math.hypot(p[0].clientX-p[1].clientX,p[0].clientY-p[1].clientY);
     const mid={x:(p[0].clientX+p[1].clientX)/2,y:(p[0].clientY+p[1].clientY)/2};
-    if(pd){const ns=Math.min(8,Math.max(1,scale*d/pd));tx=mid.x-(mid.x-tx)*ns/scale;ty=mid.y-(mid.y-ty)*ns/scale;scale=ns;}
+    if(pd){const ns=Math.min(8,Math.max(1,scale*d/pd));const cx=lb.clientWidth/2,cy=lb.clientHeight/2,dx=mid.x-cx,dy=mid.y-cy;tx=dx-(dx-tx)*ns/scale;ty=dy-(dy-ty)*ns/scale;scale=ns;}
     if(pmid){tx+=mid.x-pmid.x;ty+=mid.y-pmid.y;}
     pd=d;pmid=mid;if(scale<=1){scale=1;tx=0;ty=0;}lbApply();
   }else if(p.length===1&&drag&&scale>1){tx=e.clientX-sx;ty=e.clientY-sy;lbApply();}
